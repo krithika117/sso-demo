@@ -7,7 +7,7 @@ const withAuth = (WrappedComponent: any) => {
         const navigate = useNavigate();
         const accessToken = localStorage.getItem("token");
         if (!accessToken) {
-            navigate("/store/login");
+            navigate("/");
             return null;
         }
         return <WrappedComponent {...props}/>;
