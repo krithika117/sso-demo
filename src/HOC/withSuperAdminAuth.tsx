@@ -14,11 +14,11 @@ const withAdminAuth = (WrappedComponent: any) => {
       } = jwt_decode(accessToken);
 
       if (decode.role !== SD_ROLES.SUPERADMIN) {
-        navigate("/store/forbidden");
+        navigate("/invalid");
         return null;
       }
     } else {
-      navigate("/store/login");
+      navigate("/login");
       return null;
     }
 
